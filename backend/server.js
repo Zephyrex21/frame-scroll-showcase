@@ -9,11 +9,11 @@ const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin:[
-        "http://localhost:5173",
-        "https://frame-scroll-showcase.vercel.app/"
-    ],
-  credentials: true,
+  origin: [
+    "https://frame-scroll-showcase.vercel.app",
+    "http://localhost:5173"
+  ],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
