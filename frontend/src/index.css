@@ -1,0 +1,97 @@
+/* ─── Design Tokens — Light Theme (default) ────────────────────────────────── */
+:root, [data-theme="light"] {
+  --bg-void:       #F5F0E8;
+  --bg-dark:       #EDE8DF;
+  --bg-section:    #F0EBE3;
+  --gold:          #9A7230;
+  --gold-light:    #B8902E;
+  --gold-dim:      rgba(154, 114, 48, 0.18);
+  --gold-border:   rgba(154, 114, 48, 0.16);
+  --ivory:         #1A140E;
+  --ivory-muted:   #6E5E46;
+  --ivory-dim:     rgba(26, 20, 14, 0.45);
+
+  --hero-bg:       #080604;
+  --hero-text:     #EAE2D2;
+  --hero-muted:    #9A8E7A;
+  --hero-gold:     #C9973A;
+  --hero-border:   rgba(201, 151, 58, 0.18);
+
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+  --font-mono:     'Space Mono', 'Courier New', monospace;
+  --nav-height:    72px;
+  --ease-silk:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-sharp:    cubic-bezier(0.16, 1, 0.3, 1);
+  --theme-transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ─── Dark Theme ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-void:       #080604;
+  --bg-dark:       #0E0B08;
+  --bg-section:    #0C0A07;
+  --gold:          #C9973A;
+  --gold-light:    #E8C97A;
+  --gold-dim:      rgba(201, 151, 58, 0.25);
+  --gold-border:   rgba(201, 151, 58, 0.18);
+  --ivory:         #EAE2D2;
+  --ivory-muted:   #9A8E7A;
+  --ivory-dim:     rgba(234, 226, 210, 0.5);
+
+  --hero-bg:       #080604;
+  --hero-text:     #EAE2D2;
+  --hero-muted:    #9A8E7A;
+  --hero-gold:     #C9973A;
+  --hero-border:   rgba(201, 151, 58, 0.18);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-void);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: var(--theme-transition);
+  cursor: none;
+}
+img, canvas, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: none; border: none; background: none; }
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 2px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 1px; }
+::selection { background: var(--gold); color: var(--bg-void); }
+
+/* ─── Grain texture overlay ─────────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────────────── */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes lineGrow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@keyframes pulseGold{ 0%,100%{opacity:0.4} 50%{opacity:1} }
+@keyframes marquee  { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes countUp  { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+}

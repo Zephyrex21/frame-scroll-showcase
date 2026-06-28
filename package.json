@@ -1,0 +1,23 @@
+{
+  "name": "aurient-animated-brand-showcase",
+  "version": "2.0.0",
+  "description": "Scroll-driven 240-frame canvas animation luxury brand page — MERN stack showcase",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:backend":  "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start": "npm start --prefix backend",
+    "setup": "python3 setup_frames.py"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "luxury-brand", "scroll-animation", "canvas", "mern",
+    "react", "express", "interactive", "watch", "portfolio"
+  ],
+  "author": "Saurabh",
+  "license": "MIT"
+}
