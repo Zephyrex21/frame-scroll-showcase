@@ -57,7 +57,7 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
-    axios.get("https://aurient-backend.onrender.com/api/watch").then(r => setWatch(r.data)).catch(() => setWatch(FALLBACK));
+    axios.get("https://frame-scroll-showcase-backend.onrender.com/api/watch").then(r => setWatch(r.data)).catch(() => setWatch(FALLBACK));
   }, []);
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
