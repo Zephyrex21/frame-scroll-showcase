@@ -9,9 +9,10 @@ const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://halcyon.watch'
-    : ['http://localhost:5173', 'http://localhost:3000'],
+  origin:[
+        "http://localhost:5173",
+        "https://your-vercel-url.vercel.app"
+    ],
   credentials: true,
 }));
 app.use(express.json());
