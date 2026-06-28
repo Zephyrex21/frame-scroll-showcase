@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin:[
         "http://localhost:5173",
-        "https://your-vercel-url.vercel.app"
+        "https://frame-scroll-showcase.vercel.app/"
     ],
   credentials: true,
 }));
