@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://frame-scroll-showcase-backend.onrender.com/api/:path*"
+    },
+    {
+      "source": "/frames/:path*",
+      "destination": "https://frame-scroll-showcase-backend.onrender.com/frames/:path*"
+    }
+  ]
+}
