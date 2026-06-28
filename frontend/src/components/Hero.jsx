@@ -264,7 +264,7 @@ export default function Hero({ watch }) {
         }
         resolve();
       };
-      img.src = `/frames/frame_${String(i).padStart(5, '0')}.jpg`;
+      img.src = `https://frame-scroll-showcase-backend.onrender.com/frames/frame_${String(i).padStart(5, '0')}.jpg`;
     });
 
     /* Priority: first 30 frames first, then rest */
