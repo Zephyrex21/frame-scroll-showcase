@@ -84,7 +84,7 @@ export default function Heritage() {
 
       {/* Horizontal scroll track */}
       <div
-        ref={trackRef}
+        ref={trackRef} id="heritage-track" className="heritage-track"
         onScroll={checkScroll}
         style={{
           display:'flex', gap:'0',

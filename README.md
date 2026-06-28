@@ -2,6 +2,15 @@
 
 <br />
 
+```
+  ░█████╗░██╗░░░██╗██████╗░██╗███████╗███╗░░██╗████████╗
+  ██╔══██╗██║░░░██║██╔══██╗██║██╔════╝████╗░██║╚══██╔══╝
+  ███████║██║░░░██║██████╔╝██║█████╗░░██╔██╗██║░░░██║░░░
+  ██╔══██║██║░░░██║██╔══██╗██║██╔══╝░░██║╚████║░░░██║░░░
+  ██║░░██║╚██████╔╝██║░░██║██║███████╗██║░╚███║░░░██║░░░
+  ╚═╝░░╚═╝░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░
+```
+
 ### Scroll-Driven Animated Brand Page · MERN Stack Showcase
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev)
@@ -62,12 +71,12 @@ User scrolls ──► scroll progress (0→1)
 
 ## Features
 
-### Scroll-Driven Canvas Animation
+### 🎬 Scroll-Driven Canvas Animation
 - 240 frames rendered on `<canvas>` — cover-fit, always centred
 - Scroll-progress mapped to frame index via `requestAnimationFrame`
 - Sticky hero section: `height: calc(100vh + 5500px)` with `position: sticky` inner
 
-### 7 Scroll-Synced Text Phases
+### 📖 7 Scroll-Synced Text Phases
 Each phase fades in/out based on the current frame range — no timers, no GSAP:
 
 | Phase | Frames | Content |
@@ -80,12 +89,12 @@ Each phase fades in/out based on the current frame range — no timers, no GSAP:
 | 5 | 182 – 222 | Founder's quote |
 | 6 | 216 – 239 | Price + Reserve CTA |
 
-### Light / Dark Theme
+### 🌓 Light / Dark Theme
 - CSS custom properties on `[data-theme]` — zero JS overhead for theme switch
 - Persisted in `localStorage`
 - Warm parchment (`#F5F0E8`) vs void black (`#080604`)
 
-### UI Details
+### ✨ UI Details
 - **Custom cursor** — gold dot + elastic lagging ring (no CSS cursor, pure RAF loop)
 - **Floating section nav** — dot indicators, hover labels, active state from IntersectionObserver
 - **Animated counters** — 60 / 31 / 72h / 100 count up on scroll-in

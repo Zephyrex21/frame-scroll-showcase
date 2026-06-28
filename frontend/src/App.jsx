@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Cursor      from './components/Cursor';
-import SectionNav  from './components/SectionNav';
-import Navbar      from './components/Navbar';
-import Hero        from './components/Hero';
-import Awards      from './components/Awards';
+import Cursor       from './components/Cursor';
+import SectionNav   from './components/SectionNav';
+import Navbar       from './components/Navbar';
+import Hero         from './components/Hero';
+import Awards       from './components/Awards';
 import Introduction from './components/Introduction';
-import Specs       from './components/Specs';
-import Movement    from './components/Movement';
-import Heritage    from './components/Heritage';
-import Materials   from './components/Materials';
-import CTA         from './components/CTA';
-import Footer      from './components/Footer';
+import Specs        from './components/Specs';
+import Movement     from './components/Movement';
+import Heritage     from './components/Heritage';
+import Materials    from './components/Materials';
+import CTA          from './components/CTA';
+import Footer       from './components/Footer';
 
 const FALLBACK = {
   name: 'Imperion Chronographe',
@@ -46,18 +46,16 @@ const FALLBACK = {
 
 export default function App() {
   const [watch, setWatch] = useState(null);
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('aurient-theme') || 'dark';
-  });
+  const [theme, setTheme] = useState(() => localStorage.getItem('aurient-theme') || 'dark');
 
-  /* Apply theme to <html> element */
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('aurient-theme', theme);
   }, [theme]);
 
   useEffect(() => {
-    axios.get("https://frame-scroll-showcase-backend.onrender.com/api/watch").then(r => setWatch(r.data)).catch(() => setWatch(FALLBACK));
+    // FIX #2: Use relative URL — works via Vite proxy in dev, same-origin in prod
+    axios.get('/api/watch').then(r => setWatch(r.data)).catch(() => setWatch(FALLBACK));
   }, []);
 
   const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
