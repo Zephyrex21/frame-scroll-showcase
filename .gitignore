@@ -13,9 +13,6 @@ dist/
 build/
 backend/public/app/
 
-# Watch frames (large binary assets — run setup_frames.py to generate)
-backend/public/frames/
-
 # OS & Editor
 .DS_Store
 Thumbs.db
